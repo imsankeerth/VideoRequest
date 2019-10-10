@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Video Request</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'videoapp/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'videoapp/theme.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+       
+        <h1>Video request page-:</h1>
+        <a type="button" class="btn btn-link" href="{% url 'vrform' %}"><h4><u>Enter your video request</u></h4> </a>
+
+      </div>
+
+  {% for v in videos %}
+      <div class="page-header">
+        <h1>{{ v.videotitle }}</h1>
+      </div>
+      <div class="well">
+        <p><strong>{{v.videodesc}}</strong></p>
+      </div>
+  {% endfor %}
+
+
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
